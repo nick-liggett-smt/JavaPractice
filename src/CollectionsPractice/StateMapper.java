@@ -2,7 +2,7 @@ package CollectionsPractice;
 
 import java.util.*;
 
-public class Collector {
+public class StateMapper {
 	public static void main(String[] args) {
 
 		// Creating an empty HashMap
