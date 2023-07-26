@@ -3,12 +3,17 @@ package CollectionsPractice;
 import java.util.*;
 
 public class StateMapper {
+
 	public static void main(String[] args) {
 
-		// Creating an empty HashMap
+		/**
+		 * Create a HashMap called `stateMap` using the Map Class
+		 */
 		Map<String, String> stateMap = new HashMap<>();
 
-		// Insert pairs of state names and codes into the Map using put() method
+		/**
+		 * Insert pairs of state names and codes into the Map using put() method
+		 */
 		stateMap.put("AL", "Alabama");
 		stateMap.put("AK", "Alaska");
 		stateMap.put("AZ", "Arizona");
@@ -60,14 +65,20 @@ public class StateMapper {
 		stateMap.put("WI", "Wisconsin");
 		stateMap.put("WY", "Wyoming");
 
+		/**
+		 * Print the stateMap
+		 */
 		System.out.println("State Map: " + stateMap);
-		
+		System.out.println("");
 
-		// Order, then reverse order the data
-		
-        NavigableMap<String, String> sortedStateMap = new TreeMap<>(stateMap);
-        System.out.println("Navigable State Map: " + sortedStateMap);
-        System.out.println("Reverse it: " + sortedStateMap.descendingMap());        		
+		/**
+		 * Order the stateMap by converting it to a TreeMap, a Class that implements the
+		 * NavigableMap sub-interface of the SortedMap interface
+		 */
+		NavigableMap<String, String> sortedStateMap = new TreeMap<>(stateMap);
+		System.out.println("Navigable State Map: " + sortedStateMap);
+		System.out.println("");
+		System.out.println("Reverse it: " + sortedStateMap.descendingMap());
 
 	}
 }

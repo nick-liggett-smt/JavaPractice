@@ -5,9 +5,9 @@ import java.util.*;
 public class PeopleSorter {
 	public static void main(String[] args) {
 
-		// Create an ArrayList of folks (Person with ID, First Name, Last Name)
-
-		// Instantiate folks
+		/**
+		 * Instantiate 6 Persons using the Person Class
+		 */
 		Person person1 = new Person(1, "Nick", "Liggett");
 		Person person2 = new Person(2, "Brian", "Knight");
 		Person person3 = new Person(3, "Mary", "Turpin");
@@ -15,10 +15,11 @@ public class PeopleSorter {
 		Person person5 = new Person(5, "Cole", "Stephenson");
 		Person person6 = new Person(6, "Tom", "Fettig");
 
-		// Create an ArrayList
+		/**
+		 * Declare an ArrayList and fill it with Persons
+		 */
 		ArrayList<Person> listOfFolks = new ArrayList<>();
 
-		// Put the folks into the ArrayList
 		listOfFolks.add(person1);
 		listOfFolks.add(person2);
 		listOfFolks.add(person3);
@@ -26,10 +27,15 @@ public class PeopleSorter {
 		listOfFolks.add(person5);
 		listOfFolks.add(person6);
 
-		// Shuffle people into random order
+		/**
+		 * Use the shuffle method from the Collections Class to shuffle the ArrayList in
+		 * a random order
+		 */
 		Collections.shuffle(listOfFolks);
 
-		// Iterate over the array list and print data for each element
+		/**
+		 * Iterate over the array list and print the data for each element
+		 */
 		listOfFolks.forEach((person) -> {
 			System.out.println("First Name: " + person.getFirstName());
 			System.out.println("Last Name: " + person.getLastName());
