@@ -1,4 +1,4 @@
-package StreamPractice;
+package stream_practice;
 
 import java.io.*;
 

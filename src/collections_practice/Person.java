@@ -1,4 +1,4 @@
-package CollectionsPractice;
+package collections_practice;
 
 public class Person {
 	private int id;

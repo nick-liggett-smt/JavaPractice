@@ -1,4 +1,4 @@
-package guessingGame;
+package guessing_game;
 
 public class GuessGame {
 	Player p1;
