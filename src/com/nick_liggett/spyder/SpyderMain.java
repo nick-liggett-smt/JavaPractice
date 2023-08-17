@@ -23,8 +23,6 @@ public class SpyderMain {
 		 */
 
 		ArrayList<URL> links = crawler.crawl(homepageUrl, connection);
-		for (URL link : links)
-			System.out.println(link);
 
 		/**
 		 * Read the HTML from each link and write each page to a file using a
