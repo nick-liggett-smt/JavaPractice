@@ -20,17 +20,24 @@ public class Crawler {
 	 * @param connection
 	 * @return An ArrayList of all possible links.
 	 */
-	public ArrayList<URL> crawl(String homepageUrl) {
-		// Create an array to hold links to be printed.
+	public ArrayList<URL> crawl(String webpageUrl) {
+		
+		/**
+		 * Create an array list to hold links to be printed.
+		 */
 		ArrayList<URL> linkList = new ArrayList<>();
 
 		/**
-		 * Use Jsoup to find all the links on the given URL
+		 * Use JSoup to find all the links on the given URL
 		 */
 		try {
-			Document document = Jsoup.connect(homepageUrl).get();
+			Document document = Jsoup.connect(webpageUrl).get();
 			Elements links = document.select("a");
 
+			/**
+			 * For each link, if it is a valid protocol and it is not already been added to
+			 * linkList, add it to linkList as a URL
+			 */
 			for (Element link : links) {
 				String linkUrl = link.attr("abs:href");
 				if (linkUrl.startsWith("http") && !isUrlAlreadyPresent(linkList, linkUrl)) {
@@ -43,8 +50,15 @@ public class Crawler {
 		return linkList;
 	}
 
-	private static boolean isUrlAlreadyPresent(ArrayList<URL> linkList, String url) {
-		for (URL link : linkList) {
+	/**
+	 * Checks if a given URL is present within a given ArrayList
+	 * 
+	 * @param linkList
+	 * @param url
+	 * @return boolean
+	 */
+	private static boolean isUrlAlreadyPresent(ArrayList<URL> arrayList, String url) {
+		for (URL link : arrayList) {
 			if (link.toString().equals(url)) {
 				return true;
 			}
