@@ -26,10 +26,14 @@ public class ReaderWriter {
 			URL url = links.get(i);
 			String fileName = "response_" + i + ".txt";
 			File outputFile = new File(outputDirectory, fileName);
+			int port = url.getPort(); // Get the port number from the URL
+			if (port == -1) {
+			    port = url.getDefaultPort(); // Use the default port if not specified in the URL
+			}
 
 			try {
 				Connection connection = new Connection();
-				SSLSocket socket = connection.createSocket(url.getHost(), 443);
+				SSLSocket socket = connection.createSocket(url.getHost(), port);
 
 				PrintWriter out = new PrintWriter(socket.getOutputStream());
 				out.print("GET " + url.getPath() + " HTTP/1.1\r\n");
