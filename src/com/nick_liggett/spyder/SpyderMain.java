@@ -11,10 +11,8 @@ public class SpyderMain {
 		String homepageUrl = "https://smt-stage.qa.siliconmtn.com";
 
 		/**
-		 * Create instances of Connection, Crawler, and ReaderWriter classes
+		 * Create instances of Crawler, and ReaderWriter classes
 		 */
-
-		Connection connection = new Connection();
 		Crawler crawler = new Crawler();
 		ReaderWriter readerWriter = new ReaderWriter();
 
@@ -22,7 +20,7 @@ public class SpyderMain {
 		 * Collect all possible links using a Crawler class
 		 */
 
-		ArrayList<URL> links = crawler.crawl(homepageUrl, connection);
+		ArrayList<URL> links = crawler.crawl(homepageUrl);
 
 		/**
 		 * Read the HTML from each link and write each page to a file using a

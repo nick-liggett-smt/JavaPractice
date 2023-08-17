@@ -20,7 +20,7 @@ public class Crawler {
 	 * @param connection
 	 * @return An ArrayList of all possible links.
 	 */
-	public ArrayList<URL> crawl(String homepageUrl, Connection connection) {
+	public ArrayList<URL> crawl(String homepageUrl) {
 		// Create an array to hold links to be printed.
 		ArrayList<URL> linkList = new ArrayList<>();
 

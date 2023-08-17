@@ -24,11 +24,11 @@ public class ReaderWriter {
 
 		for (int i = 0; i < links.size(); i++) {
 			URL url = links.get(i);
-			String fileName = "response_" + i + ".txt";
+			String fileName = "response_" + (i + 1) + ".txt";
 			File outputFile = new File(outputDirectory, fileName);
 			int port = url.getPort(); // Get the port number from the URL
 			if (port == -1) {
-			    port = url.getDefaultPort(); // Use the default port if not specified in the URL
+				port = url.getDefaultPort(); // Use the default port if not specified in the URL
 			}
 
 			try {
